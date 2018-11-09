@@ -1,1 +1,1 @@
-Simple Hello World API built completely with Node.js and without any npm dependencies.
+Simple Hello World RESTful API built completely with Node.js and without any npm dependencies.

@@ -1,3 +1,6 @@
+/*Simple Node.js hello word RESTful Api
+*/
+
 //load dependencies
 const http = require('http');
 const url = require('url');
@@ -5,20 +8,28 @@ const Decoder = require("string_decoder").StringDecoder;
 
 //create http server
 const server = http.createServer(function (req, res) {
+
   //get url entered and parse it
   const parsedUrl = url.parse(req.url, true);
 
+  //get url pathname
   const urlPathName = parsedUrl.pathname;
+
   //get url path name and trim it of end slashes
   const trimmedPathName = urlPathName.replace(/^\/+|\/+$/g, '');
+
   //get query and assign it to a variable
   const stringQuery = parsedUrl.query;
+
   //get user's requested method
   const method = req.method.toLowerCase();
 
+  //get headers
   const header = req.headers;
+
   //initalize payload from user's request and set to an empty string
   let stringLoad = '';
+
   //initialize string decoder
   const decoder = new Decoder("utf-8");
   //on request, write in data to payload
